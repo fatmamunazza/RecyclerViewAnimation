@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -55,7 +56,15 @@ ColorAdapter colorAdapter;
                 Toast.makeText(MainActivity.this,modelArrayList.get(position).getColorName(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        modelArrayList.add(new ColorModel("#000000","MUNAZZA FATMA"));
+        colorAdapter.notifyDataSetChanged();
+        for(int i=0;i<100;i++) {
+            modelArrayList.add(new ColorModel("#000000", "MUNAZZA FATMA" + String.valueOf(i)));
+            colorAdapter.notifyDataSetChanged();
+        }
 /*
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             colorRecyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
                 @Override

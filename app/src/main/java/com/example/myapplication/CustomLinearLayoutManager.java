@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -88,6 +90,7 @@ public class CustomLinearLayoutManager extends LinearLayoutManager {
                 View child = getChildAt(0);
                 child.setScaleX(1);
                 child.setScaleY(1);
+                child.setRotationY(0);
             }
             if(getChildCount()==2) {
                 for (int i = 0; i < getChildCount(); i++) {
